@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    
+    <div class="dashboard-container">
+        <header>
+            <h1>Halo! Selamat Datang di Dashboard Saya</h1>
+            <p>Jelajahi portofolio saya, proyek-proyek, dan berbagai cara untuk terhubung dengan saya.</p>
+        </header>
+
+        <div class="grid-container">
+            <div class="card">
+                <h2>Tentang Saya</h2>
+                <p>Kenali lebih jauh tentang perjalanan, keahlian, dan minat saya di dunia teknologi dan desain.</p>
+                <a href="https://rahmathaikal05.github.io/portofolio/" class="button">Lihat Profil Lengkap</a>
+            </div>
+ <!--
+            <div class="card">
+                <h2>Blog & Artikel</h2>
+                <p>Baca tulisan saya tentang pengembangan web, tips coding, dan pemikiran pribadi.</p>
+                <a href="https://yourwebsite.com/blog" class="button">Kunjungi Blog</a>
+            </div>-->
+
+            <div class="card">
+                <h2>GitHub Profil</h2>
+                <p>Lihat semua repositori saya, kontribusi, dan aktivitas terbaru di GitHub.</p>
+                <a href="https://github.com/rahmathaikal05?tab=repositories" class="button">Pergi ke GitHub</a>
+            </div>
+
+            <div class="card">
+                <h2>Hubungi Saya</h2>
+                <p>Punya pertanyaan atau ingin berkolaborasi? Jangan ragu untuk menghubungi saya!</p>
+                <a href="mailto:your.rahmathaikal227@gmaill.com" class="button">Kirim Email</a>
+            </div>
+
+            <div class="card">
+                <h2>Profil LinkedIn</h2>
+                <p>Terhubung dengan saya di LinkedIn untuk diskusi profesional dan peluang kerja.</p>
+                <a href="https://www.linkedin.com/in/rahmat-haikal-b351b4372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="button">Lihat LinkedIn</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Rahmat Haikal. Hak Cipta Dilindungi.</p>
+        </footer>
+    </div>
+
+
+    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Cek preferensi pengguna dari localStorage atau sistem
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        body.classList.add(currentTheme);
+        if (currentTheme === 'dark-mode') {
+            toggleButton.textContent = '☀️'; // Ganti ikon jika sudah dark mode
+        }
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Jika sistem operasi user memilih dark mode
+        body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️';
+    }
+
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Ganti ikon tombol
+        if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = '☀️'; // Ikon matahari untuk dark mode
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            toggleButton.textContent = '🌙'; // Ikon bulan untuk light mode
+            localStorage.setItem('theme', 'light-mode');
+        }
+    });
+</script>
+</body>
+</html>
